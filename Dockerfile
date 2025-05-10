@@ -29,7 +29,7 @@ COPY --from=build /app/zyn/ssl/localhost/keystore.p12 /app/zyn/ssl/localhost/key
 COPY --from=build /app/zyn/ssl/prod/keystore.p12 /app/zyn/ssl/prod/keystore.p12
 
 # Environment variables (Railway will inject DATABASE_URL, PORT, etc.)
-ENV SPRING_PROFILES_ACTIVE=dev
+ENV SPRING_PROFILES_ACTIVE=prod
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 
