@@ -24,12 +24,9 @@ WORKDIR /app
 # Copy the jar from the build stage
 COPY --from=build /app/target/*.jar app.jar
 
-# Copy SSL certificates
-COPY --from=build /app/zyn/ssl/localhost/keystore.p12 /app/zyn/ssl/localhost/keystore.p12
-COPY --from=build /app/zyn/ssl/prod/keystore.p12 /app/zyn/ssl/prod/keystore.p12
 
 # Environment variables (Railway will inject DATABASE_URL, PORT, etc.)
-ENV SPRING_PROFILES_ACTIVE=prod
+ENV SPRING_PROFILES_ACTIVE=dev
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 
