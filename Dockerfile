@@ -1,15 +1,40 @@
-# Use a lightweight Alpine OpenJDK runtime as a base image
-FROM openjdk:17
+# Build stage
+FROM maven:3.8-openjdk-17-slim as build
 
+# Set character encoding for Maven
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
 
-# Copy the packaged JAR file from the build stage
-COPY target/*.jar app.jar
+WORKDIR /app
 
-COPY zyn/ssl/localhost/keystore.p12 zyn/ssl/localhost/keystore.p12
-COPY zyn/ssl/prod/keystore.p12 zyn/ssl/prod/keystore.p12
+# Copy pom.xml first for dependency resolution
+COPY pom.xml .
+# Copy only the necessary resources for the build
+COPY src ./src
+COPY zyn ./zyn
 
-# Expose the port
+# Build the application with proper encoding
+RUN mvn clean package -DskipTests -Dfile.encoding=UTF-8
+
+# Runtime stage
+FROM openjdk:17-slim
+
+WORKDIR /app
+
+# Copy the jar from the build stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Copy SSL certificates
+COPY --from=build /app/zyn/ssl/localhost/keystore.p12 /app/zyn/ssl/localhost/keystore.p12
+COPY --from=build /app/zyn/ssl/prod/keystore.p12 /app/zyn/ssl/prod/keystore.p12
+
+# Environment variables (Railway will inject DATABASE_URL, PORT, etc.)
+ENV SPRING_PROFILES_ACTIVE=prod
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+
+# The port your application will listen on
 EXPOSE 8036
 
-# Define the command to run the application
-CMD ["java", "-jar", "app.jar"]
+# Command to run the application
+CMD ["java", "-Dfile.encoding=UTF-8", "-jar", "app.jar"]
