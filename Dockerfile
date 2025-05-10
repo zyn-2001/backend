@@ -33,8 +33,7 @@ ENV SPRING_PROFILES_ACTIVE=prod
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 
-# The port your application will listen on
-EXPOSE 8036
+EXPOSE 8080
 
 # Command to run the application
 CMD ["java", "-Dfile.encoding=UTF-8", "-jar", "app.jar"]
