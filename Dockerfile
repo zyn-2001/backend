@@ -1,30 +1,35 @@
-# Build stage
-FROM maven:3.8-openjdk-17-slim as build
+FROM maven:3.8.5-openjdk-17-slim AS build
 
-# Set character encoding for Maven
-ENV LANG=C.UTF-8
-ENV LC_ALL=C.UTF-8
-
+# Définir le répertoire de travail
 WORKDIR /app
 
-# Copy pom.xml first for dependency resolution
+# Copier les fichiers pom.xml et src
 COPY pom.xml .
-# Copy only the necessary resources for the build
 COPY src ./src
 
-# Build the application with proper encoding
+# Compiler l'application en ignorant les tests
 RUN mvn clean package -DskipTests
 
-# Runtime stage
-FROM openjdk:17-slim
+# Deuxième étape avec seulement le JRE pour un conteneur plus léger
+FROM eclipse-temurin:17-jre-alpine
 
+# Créer un utilisateur non-root pour des raisons de sécurité
+RUN addgroup --system spring && adduser --system spring --ingroup spring
+
+# Définir le répertoire de travail
 WORKDIR /app
 
-# Copy the jar from the build stage
+# Copier le JAR compilé depuis l'étape de build
 COPY --from=build /app/target/*.jar app.jar
 
+# Définir l'utilisateur non-root
+USER spring:spring
 
+# Exposer le port sur lequel l'application Spring Boot s'exécute
 EXPOSE 8080
 
-# Command to run the application
-CMD ["java", "-Dfile.encoding=UTF-8", "-jar", "app.jar"]
+# Variable d'environnement pour les paramètres Java
+ENV JAVA_OPTS=""
+
+# Commande pour exécuter l'application
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
