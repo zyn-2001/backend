@@ -26,4 +26,4 @@ COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 
 # Commande pour exécuter l'application
-CMD ["sh", "-c", "java -Dserver.port=${PORT:-8080} -Dlogging.file.name=/app/logs/spring.log -jar app.jar"]
+CMD ["sh", "-c", "java -Dserver.port=8080 -Dlogging.file.name=/app/logs/spring.log -jar app.jar"]
