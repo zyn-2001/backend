@@ -3563,3 +3563,83 @@ Action:
 
 Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
 
+13:55:53.717 [main] INFO  ma.zyn.app.AppApplication - Starting AppApplication using Java 23.0.1 with PID 20832 (C:\Users\HP\Downloads\rentalbackend\target\classes started by HP in C:\Users\HP\Downloads\rentalbackend)
+13:55:53.720 [main] INFO  ma.zyn.app.AppApplication - The following 1 profile is active: "dev"
+13:55:55.565 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:55:55.803 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 228 ms. Found 26 JPA repository interfaces.
+13:55:56.675 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8036 (http)
+13:55:56.685 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8036"]
+13:55:56.687 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:55:56.687 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.10]
+13:55:56.804 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:55:56.806 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2998 ms
+13:55:57.169 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:55:57.316 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.5.Final
+13:55:57.322 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:55:57.582 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:55:57.760 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:55:57.791 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:55:59.429 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1bb51492
+13:55:59.432 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:56:00.439 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:56:01.820 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:56:01.942 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@10bf2185] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:56:02.332 [main] DEBUG org.hibernate.SQL - alter table avoir modify column date  datetime(6)
+13:56:02.475 [main] DEBUG org.hibernate.SQL - alter table charge modify column date  datetime(6)
+13:56:02.639 [main] DEBUG org.hibernate.SQL - alter table compte modify column date_creation  datetime(6)
+13:56:02.789 [main] DEBUG org.hibernate.SQL - alter table compte_admin modify column date_creation  datetime(6)
+13:56:02.958 [main] DEBUG org.hibernate.SQL - alter table local modify column date_creation  datetime(6)
+13:56:03.169 [main] DEBUG org.hibernate.SQL - alter table local modify column description  TEXT
+13:56:03.350 [main] DEBUG org.hibernate.SQL - alter table local modify column superficie  float(23)
+13:56:03.500 [main] DEBUG org.hibernate.SQL - alter table locataire modify column date_creation  datetime(6)
+13:56:03.669 [main] DEBUG org.hibernate.SQL - alter table location modify column date_creation  datetime(6)
+13:56:03.831 [main] DEBUG org.hibernate.SQL - alter table location modify column date_debut  datetime(6)
+13:56:04.021 [main] DEBUG org.hibernate.SQL - alter table location modify column date_fin  datetime(6)
+13:56:04.171 [main] DEBUG org.hibernate.SQL - alter table reglement modify column date  datetime(6)
+13:56:04.349 [main] DEBUG org.hibernate.SQL - alter table role_app modify column created_at  datetime(6)
+13:56:04.589 [main] DEBUG org.hibernate.SQL - alter table role_app modify column updated_at  datetime(6)
+13:56:04.747 [main] DEBUG org.hibernate.SQL - alter table transaction modify column date  datetime(6)
+13:56:04.902 [main] DEBUG org.hibernate.SQL - alter table user_app modify column created_at  datetime(6)
+13:56:05.069 [main] DEBUG org.hibernate.SQL - alter table user_app modify column expiration_link_date  datetime(6)
+13:56:05.226 [main] DEBUG org.hibernate.SQL - alter table user_app modify column lockout_time  datetime(6)
+13:56:05.428 [main] DEBUG org.hibernate.SQL - alter table user_app modify column updated_at  datetime(6)
+13:56:17.233 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:56:17.555 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+13:56:20.499 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:56:21.049 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 5 endpoint(s) beneath base path '/actuator'
+13:56:21.127 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3296b4ba, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@26fddb3f, org.springframework.security.web.context.SecurityContextPersistenceFilter@57c089ac, org.springframework.security.web.header.HeaderWriterFilter@480f24b1, org.springframework.security.web.authentication.logout.LogoutFilter@40f9f97e, ma.zyn.app.zynerator.security.jwt.AuthTokenFilter@abce494, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@632e4d5d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2718f622, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c5a4358, org.springframework.security.web.session.SessionManagementFilter@681c7f46, org.springframework.security.web.access.ExceptionTranslationFilter@2810618f, org.springframework.security.web.access.intercept.AuthorizationFilter@5c891ec1]
+13:56:21.688 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8036"]
+13:56:21.713 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8036 (http) with context path ''
+13:56:21.725 [main] INFO  ma.zyn.app.AppApplication - Started AppApplication in 28.467 seconds (process running for 30.115)
+13:56:21.863 [main] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.code,s1_0.color,s1_0.indexation,s1_0.label,s1_0.style from statut_local s1_0 where s1_0.code=?
+13:56:22.468 [main] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.code,s1_0.color,s1_0.indexation,s1_0.label,s1_0.style from statut_local s1_0 where s1_0.code=?
+13:56:23.192 [main] DEBUG org.hibernate.SQL - select s1_0.id,s1_0.code,s1_0.color,s1_0.indexation,s1_0.label,s1_0.style from statut_local s1_0 where s1_0.code=?
+13:56:23.349 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.color,t1_0.indexation,t1_0.label,t1_0.style from type_locataire t1_0 where t1_0.code=?
+13:56:23.533 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.color,t1_0.indexation,t1_0.label,t1_0.style from type_locataire t1_0 where t1_0.code=?
+13:56:23.727 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.label,t1_0.style from type_local t1_0 where t1_0.code=?
+13:56:23.911 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.label,t1_0.style from type_local t1_0 where t1_0.code=?
+13:56:24.071 [main] DEBUG org.hibernate.SQL - select m1_0.id,m1_0.code,m1_0.indexation,m1_0.label,m1_0.style from mode_paiement m1_0 where m1_0.code=?
+13:56:24.283 [main] DEBUG org.hibernate.SQL - select m1_0.id,m1_0.code,m1_0.indexation,m1_0.label,m1_0.style from mode_paiement m1_0 where m1_0.code=?
+13:56:24.425 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.indexation,t1_0.label,t1_0.style from type_paiement t1_0 where t1_0.code=?
+13:56:24.602 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.indexation,t1_0.label,t1_0.style from type_paiement t1_0 where t1_0.code=?
+13:56:24.767 [main] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.code,c1_0.date_creation,c1_0.solde from compte_admin c1_0 where c1_0.code=?
+13:56:24.864 [main] DEBUG org.hibernate.SQL - select c1_0.compte_admin,c1_0.id,c1_0.banque,c1_0.caisse,c1_0.code,c1_0.compte_charge,c1_0.compte_locataire,c1_0.credit,c1_0.date_creation,c1_0.debit,c1_0.numero_compte,c1_0.solde,c1_0.solde_initial from compte c1_0 where c1_0.compte_admin=?
+13:56:25.045 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.label,t1_0.style from type_transactiont t1_0 where t1_0.code=?
+13:56:25.211 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.label,t1_0.style from type_transactiont t1_0 where t1_0.code=?
+13:56:25.397 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.label,t1_0.style from type_transactiont t1_0 where t1_0.code=?
+13:56:25.563 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.description,t1_0.label,t1_0.style from type_charge t1_0 where t1_0.code=?
+13:56:25.739 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.description,t1_0.label,t1_0.style from type_charge t1_0 where t1_0.code=?
+13:56:25.906 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.description,t1_0.label,t1_0.style from type_charge t1_0 where t1_0.code=?
+13:56:26.050 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.description,t1_0.label,t1_0.style from type_charge t1_0 where t1_0.code=?
+13:56:26.210 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.description,t1_0.label,t1_0.style from type_charge t1_0 where t1_0.code=?
+13:56:26.356 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.description,t1_0.label,t1_0.style from type_charge t1_0 where t1_0.code=?
+13:56:26.494 [main] DEBUG org.hibernate.SQL - select t1_0.id,t1_0.code,t1_0.description,t1_0.label,t1_0.style from type_charge t1_0 where t1_0.code=?
+13:56:26.639 [main] DEBUG org.hibernate.SQL - select c1_0.id,c1_0.code,c1_0.description,c1_0.label,c1_0.local,c1_0.nom,c1_0.solde from compte_charge c1_0 where c1_0.code=?
+13:56:26.793 [main] DEBUG org.hibernate.SQL - select r1_0.id,r1_0.authority,r1_0.created_at,r1_0.updated_at from role_app r1_0 where r1_0.authority=?
+13:56:27.044 [main] DEBUG org.hibernate.SQL - select m1_0.id,m1_0.reference from model_permission m1_0
+13:56:27.233 [main] DEBUG org.hibernate.SQL - select a1_0.id,a1_0.reference from action_permission a1_0
+13:56:27.439 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.about,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.avatar,u1_0.created_at,u1_0.credentials_non_expired,u1_0.email,u1_0.enabled,u1_0.expiration_link_date,u1_0.first_name,u1_0.full_name,u1_0.last_name,u1_0.link_validation_code,u1_0.lockout_time,u1_0.login_attempts,u1_0.password,u1_0.password_changed,u1_0.phone,u1_0.updated_at,u1_0.username from user_app u1_0 where u1_0.username=?
+13:56:27.527 [main] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.about,u1_0.account_non_expired,u1_0.account_non_locked,u1_0.avatar,u1_0.created_at,u1_0.credentials_non_expired,u1_0.email,u1_0.enabled,u1_0.expiration_link_date,u1_0.first_name,u1_0.full_name,u1_0.last_name,u1_0.link_validation_code,u1_0.lockout_time,u1_0.login_attempts,u1_0.password,u1_0.password_changed,u1_0.phone,u1_0.updated_at,u1_0.username from user_app u1_0 where u1_0.email=?
+13:56:45.705 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:56:45.707 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:56:47.109 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
