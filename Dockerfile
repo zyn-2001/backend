@@ -19,7 +19,7 @@ WORKDIR /app
 # Créer les répertoires pour les logs
 RUN mkdir -p /app/logs /app/target && chmod 777 /app/logs /app/target
 
-# Copier le JAR compilé depuis l'étape de build
+# Copier le JAR compilaé depuis l'étape de build
 COPY --from=build /app/target/*.jar app.jar
 
 # Exposer le port sur lequel l'application Spring Boot s'exécute
