@@ -3492,3 +3492,74 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 13:20:52.308 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 13:20:52.310 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 13:20:52.319 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:29:16.699 [main] INFO  ma.zyn.app.AppApplication - Starting AppApplication using Java 23.0.1 with PID 21312 (C:\Users\HP\Downloads\rentalbackend\target\classes started by HP in C:\Users\HP\Downloads\rentalbackend)
+13:29:16.702 [main] INFO  ma.zyn.app.AppApplication - The following 1 profile is active: "dev"
+13:29:18.250 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:29:18.504 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 245 ms. Found 26 JPA repository interfaces.
+13:29:19.274 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:29:19.285 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:29:19.287 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:29:19.287 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.10]
+13:29:19.425 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:29:19.425 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2649 ms
+13:29:19.752 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:29:19.806 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.5.Final
+13:29:19.809 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:29:19.954 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:29:20.087 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:29:20.104 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:29:21.300 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d12f065
+13:29:21.302 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:29:21.957 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:29:23.040 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:29:23.133 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3bc82aa3] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+13:29:23.507 [main] DEBUG org.hibernate.SQL - alter table avoir modify column date  datetime(6)
+13:29:23.693 [main] DEBUG org.hibernate.SQL - alter table charge modify column date  datetime(6)
+13:29:23.845 [main] DEBUG org.hibernate.SQL - alter table compte modify column date_creation  datetime(6)
+13:29:24.005 [main] DEBUG org.hibernate.SQL - alter table compte_admin modify column date_creation  datetime(6)
+13:29:24.162 [main] DEBUG org.hibernate.SQL - alter table local modify column date_creation  datetime(6)
+13:29:24.294 [main] DEBUG org.hibernate.SQL - alter table local modify column description  TEXT
+13:29:24.475 [main] DEBUG org.hibernate.SQL - alter table local modify column superficie  float(23)
+13:29:24.612 [main] DEBUG org.hibernate.SQL - alter table locataire modify column date_creation  datetime(6)
+13:29:24.761 [main] DEBUG org.hibernate.SQL - alter table location modify column date_creation  datetime(6)
+13:29:24.889 [main] DEBUG org.hibernate.SQL - alter table location modify column date_debut  datetime(6)
+13:29:25.056 [main] DEBUG org.hibernate.SQL - alter table location modify column date_fin  datetime(6)
+13:29:25.211 [main] DEBUG org.hibernate.SQL - alter table reglement modify column date  datetime(6)
+13:29:25.338 [main] DEBUG org.hibernate.SQL - alter table role_app modify column created_at  datetime(6)
+13:29:25.464 [main] DEBUG org.hibernate.SQL - alter table role_app modify column updated_at  datetime(6)
+13:29:25.590 [main] DEBUG org.hibernate.SQL - alter table transaction modify column date  datetime(6)
+13:29:25.713 [main] DEBUG org.hibernate.SQL - alter table user_app modify column created_at  datetime(6)
+13:29:25.842 [main] DEBUG org.hibernate.SQL - alter table user_app modify column expiration_link_date  datetime(6)
+13:29:25.967 [main] DEBUG org.hibernate.SQL - alter table user_app modify column lockout_time  datetime(6)
+13:29:26.105 [main] DEBUG org.hibernate.SQL - alter table user_app modify column updated_at  datetime(6)
+13:29:32.777 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:29:33.177 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+13:29:36.033 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:29:36.600 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 5 endpoint(s) beneath base path '/actuator'
+13:29:36.679 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6c8e40fc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41bb5a40, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e765313, org.springframework.security.web.header.HeaderWriterFilter@4c7e7855, org.springframework.security.web.authentication.logout.LogoutFilter@5c891ec1, ma.zyn.app.zynerator.security.jwt.AuthTokenFilter@3057a923, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@296ac298, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a1b205, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@83d47a2, org.springframework.security.web.session.SessionManagementFilter@4e8765dd, org.springframework.security.web.access.ExceptionTranslationFilter@15dcfe4e, org.springframework.security.web.access.intercept.AuthorizationFilter@21618f32]
+13:29:37.298 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:29:37.314 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+13:29:37.318 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:29:37.327 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:29:38.897 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:29:38.899 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+13:29:38.899 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+13:29:38.904 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+13:29:38.905 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+13:29:38.918 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13:29:38.946 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
