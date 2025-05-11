@@ -13,29 +13,17 @@ RUN mvn clean package -DskipTests
 # Deuxième étape avec seulement le JRE pour un conteneur plus léger
 FROM eclipse-temurin:17-jre-alpine
 
-# Créer un utilisateur non-root pour des raisons de sécurité
-RUN addgroup --system spring && adduser --system spring --ingroup spring
-
 # Définir le répertoire de travail
 WORKDIR /app
 
-# Créer les répertoires pour les logs et donner les permissions à l'utilisateur spring
-RUN mkdir -p /app/logs /app/target
-RUN chown -R spring:spring /app
+# Créer les répertoires pour les logs
+RUN mkdir -p /app/logs /app/target && chmod 777 /app/logs /app/target
 
 # Copier le JAR compilé depuis l'étape de build
 COPY --from=build /app/target/*.jar app.jar
 
-# Définir l'utilisateur non-root
-USER spring:spring
-
 # Exposer le port sur lequel l'application Spring Boot s'exécute
 EXPOSE 8080
 
-# Variable d'environnement pour les paramètres Java et la configuration de logging
-ENV JAVA_OPTS=""
-ENV LOGGING_FILE_PATH="/app/logs"
-ENV LOGGING_CONFIG="classpath:logback-docker.xml"
-
 # Commande pour exécuter l'application
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -Dlogging.file.path=/app/logs -jar app.jar"]
+CMD ["java", "-Dlogging.file.name=/app/logs/spring.log", "-jar", "app.jar"]
