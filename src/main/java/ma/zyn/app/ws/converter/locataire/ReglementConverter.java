@@ -104,6 +104,7 @@ public class ReglementConverter {
 
     public void initObject(boolean value) {
         this.location = value;
+
     }
 	
     public List<Reglement> toItem(List<ReglementDto> dtos) {

@@ -274,6 +274,11 @@ public class CompteAdminServiceImpl implements CompteAdminService {
     }
 
     @Override
+    public Compte fintByCaisse(Caisse caisse) {
+        return dao.findByCaisse(caisse);
+    }
+
+    @Override
     public Compte findCharge() {
         return dao.findByCode("CHARGE");
     }

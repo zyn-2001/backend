@@ -1,5 +1,6 @@
 package ma.zyn.app.dao.facade.core.finance;
 
+import ma.zyn.app.bean.core.finance.Caisse;
 import ma.zyn.app.bean.core.finance.Compte;
 import ma.zyn.app.zynerator.repository.AbstractRepository;
 import org.springframework.stereotype.Repository;
@@ -16,4 +17,6 @@ public interface CompteDao extends AbstractRepository<Compte,Long>  {
 
 
     Compte findByCode(String code);
+
+    Compte findByCaisse(Caisse caisse);
 }

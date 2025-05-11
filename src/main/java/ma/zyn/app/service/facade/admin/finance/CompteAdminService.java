@@ -1,5 +1,6 @@
 package ma.zyn.app.service.facade.admin.finance;
 
+import ma.zyn.app.bean.core.finance.Caisse;
 import ma.zyn.app.bean.core.finance.Compte;
 import ma.zyn.app.dao.criteria.core.finance.CompteCriteria;
 
@@ -50,6 +51,8 @@ public interface CompteAdminService {
     public String uploadFile(String checksumOld, String tempUpladedFile,String destinationFilePath) throws Exception ;
 
     Compte findByCode(String code);
+
+    Compte fintByCaisse(Caisse caisse);
 
     Compte findCharge();
 }

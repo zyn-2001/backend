@@ -182,7 +182,7 @@ public class ReglementAdminServiceImpl implements ReglementAdminService {
             }
         }
         if (reglement.getCaisse() != null) {
-            Compte comteCaisse = compteAdminService.findByCode(reglement.getCaisse().getCode());
+            Compte comteCaisse = compteAdminService.fintByCaisse(reglement.getCaisse());
             if (comteCaisse != null) {
                 transaction.setCompteDestination(comteCaisse);
             }

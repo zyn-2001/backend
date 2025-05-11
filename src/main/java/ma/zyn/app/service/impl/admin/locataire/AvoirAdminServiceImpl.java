@@ -180,7 +180,7 @@ public class AvoirAdminServiceImpl implements AvoirAdminService {
             }
         }
         if (avoir.getCaisse() != null) {
-            Compte comteCaisse = compteAdminService.findByCode(avoir.getCaisse().getCode());
+            Compte comteCaisse = compteAdminService.fintByCaisse(avoir.getCaisse());
             if (comteCaisse != null) {
                 transaction.setCompteSource(comteCaisse);
             }
