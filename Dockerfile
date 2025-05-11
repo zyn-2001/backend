@@ -19,6 +19,10 @@ RUN addgroup --system spring && adduser --system spring --ingroup spring
 # Définir le répertoire de travail
 WORKDIR /app
 
+# Créer les répertoires pour les logs et donner les permissions à l'utilisateur spring
+RUN mkdir -p /app/logs /app/target
+RUN chown -R spring:spring /app
+
 # Copier le JAR compilé depuis l'étape de build
 COPY --from=build /app/target/*.jar app.jar
 
@@ -28,8 +32,10 @@ USER spring:spring
 # Exposer le port sur lequel l'application Spring Boot s'exécute
 EXPOSE 8080
 
-# Variable d'environnement pour les paramètres Java
+# Variable d'environnement pour les paramètres Java et la configuration de logging
 ENV JAVA_OPTS=""
+ENV LOGGING_FILE_PATH="/app/logs"
+ENV LOGGING_CONFIG="classpath:logback-docker.xml"
 
 # Commande pour exécuter l'application
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -Dlogging.file.path=/app/logs -jar app.jar"]
