@@ -11,10 +11,9 @@ WORKDIR /app
 COPY pom.xml .
 # Copy only the necessary resources for the build
 COPY src ./src
-COPY zyn ./zyn
 
 # Build the application with proper encoding
-RUN mvn clean package -DskipTests -Dfile.encoding=UTF-8
+RUN mvn clean package -DskipTests
 
 # Runtime stage
 FROM openjdk:17-slim
@@ -24,11 +23,6 @@ WORKDIR /app
 # Copy the jar from the build stage
 COPY --from=build /app/target/*.jar app.jar
 
-
-# Environment variables (Railway will inject DATABASE_URL, PORT, etc.)
-ENV SPRING_PROFILES_ACTIVE=dev
-ENV LANG=C.UTF-8
-ENV LC_ALL=C.UTF-8
 
 EXPOSE 8080
 
