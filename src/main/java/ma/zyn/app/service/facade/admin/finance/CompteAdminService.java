@@ -1,5 +1,6 @@
 package ma.zyn.app.service.facade.admin.finance;
 
+import ma.zyn.app.bean.core.finance.Banque;
 import ma.zyn.app.bean.core.finance.Caisse;
 import ma.zyn.app.bean.core.finance.Compte;
 import ma.zyn.app.dao.criteria.core.finance.CompteCriteria;
@@ -55,4 +56,6 @@ public interface CompteAdminService {
     Compte fintByCaisse(Caisse caisse);
 
     Compte findCharge();
+
+    Compte findByBanque(Banque banque);
 }

@@ -174,7 +174,7 @@ public class AvoirAdminServiceImpl implements AvoirAdminService {
         CompteLocataire byLocataireId = compteLocataireAdminService.findByLocataireId(avoir.getLocation().getLocataire().getId());
         transaction.setCompteLocataire(byLocataireId);
         if (avoir.getBanque() != null) {
-            Compte comteBanque = compteAdminService.findByCode(avoir.getBanque().getCode());
+            Compte comteBanque = compteAdminService.findByBanque(avoir.getBanque());
             if (comteBanque != null) {
                 transaction.setCompteSource(comteBanque);
             }

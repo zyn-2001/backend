@@ -283,6 +283,11 @@ public class CompteAdminServiceImpl implements CompteAdminService {
         return dao.findByCode("CHARGE");
     }
 
+    @Override
+    public Compte findByBanque(Banque banque) {
+        return dao.findByBanque(banque);
+    }
+
     public void findOrSaveAssociatedObject(Compte t){
         if( t != null) {
             t.setBanque(banqueService.findOrSave(t.getBanque()));

@@ -176,7 +176,7 @@ public class ReglementAdminServiceImpl implements ReglementAdminService {
         CompteLocataire byLocataireId = compteLocataireAdminService.findByLocataireId(reglement.getLocation().getLocataire().getId());
         transaction.setCompteLocataire(byLocataireId);
         if (reglement.getBanque() != null) {
-            Compte comteBanque = compteAdminService.findByCode(reglement.getBanque().getCode());
+            Compte comteBanque = compteAdminService.findByBanque(reglement.getBanque());
             if (comteBanque != null) {
                 transaction.setCompteDestination(comteBanque);
             }
